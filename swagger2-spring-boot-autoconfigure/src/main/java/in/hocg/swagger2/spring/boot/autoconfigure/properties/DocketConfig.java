@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 import springfox.documentation.service.Contact;
+import springfox.documentation.service.VendorExtension;
 
 import java.util.Collections;
 import java.util.List;
@@ -26,7 +27,6 @@ public class DocketConfig {
     private String basePackage;
     private String path;
     
-    
     private String title;
     private String description;
     private String version;
@@ -43,7 +43,7 @@ public class DocketConfig {
         return new Contact(contact.getName(), contact.getUrl(), contact.getEmail());
     }
     
-    public List get2Extensions() {
+    public List<VendorExtension> get2Extensions() {
         if (Objects.isNull(extensions) || extensions.isEmpty()) {
             return Collections.emptyList();
         }

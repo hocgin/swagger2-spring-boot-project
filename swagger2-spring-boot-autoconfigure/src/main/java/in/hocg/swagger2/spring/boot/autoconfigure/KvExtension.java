@@ -31,8 +31,8 @@ public class KvExtension implements VendorExtension<Object> {
         return new KvExtension(name, value);
     }
     
-    public static ArrayList<KvExtension> valueOfMap(Map<String, Object> map) {
-        ArrayList<KvExtension> result = new ArrayList<>(map.size());
+    public static ArrayList<VendorExtension> valueOfMap(Map<String, Object> map) {
+        ArrayList<VendorExtension> result = new ArrayList<>(map.size());
         map.forEach((k, v) -> result.add(KvExtension.valueOf(k, v)));
         return result;
     }

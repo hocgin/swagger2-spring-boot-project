@@ -16,16 +16,14 @@
  */
 package in.hocg.swagger2.spring.boot.autoconfigure;
 
+import in.hocg.swagger2.spring.boot.autoconfigure.properties.Swagger2Properties;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.core.env.Environment;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.util.Collection;
 
 
 @RunWith(SpringRunner.class)
@@ -34,16 +32,13 @@ import java.util.Collection;
 public class Swagger2AutoConfigurationTest {
 
     @Autowired
-    private Environment environment;
+    private Swagger2Properties swagger2Properties;
 
-    @Autowired
-    private Collection<Environment> environments;
 
     @Test
     public void testBeans() {
 
-        Assert.assertNotNull(environment);
-        Assert.assertNotNull(environments);
+        Assert.assertNotNull(swagger2Properties);
     }
 
 }

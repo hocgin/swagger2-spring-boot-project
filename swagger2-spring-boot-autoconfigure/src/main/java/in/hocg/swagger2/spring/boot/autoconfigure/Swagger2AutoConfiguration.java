@@ -43,8 +43,18 @@ public class Swagger2AutoConfiguration implements BeanFactoryPostProcessor, Envi
         this.environment = environment;
     }
     
-    private Docket defaultDocket() {
+    private Docket defaultDocket(Swagger2Properties properties) {
+        ApiInfo apiInfo = new ApiInfoBuilder()
+                .contact(properties.get2Contact())
+                .title(properties.getTitle())
+                .description(properties.getDescription())
+                .version(properties.getVersion())
+                .termsOfServiceUrl(properties.getTermsOfServiceUrl())
+                .extensions(properties.get2Extensions())
+                .build();
+        
         return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo)
                 .select()
                 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
@@ -61,7 +71,6 @@ public class Swagger2AutoConfiguration implements BeanFactoryPostProcessor, Envi
                 .extensions(config.get2Extensions())
                 .build();
         
-        
         ApiSelectorBuilder apiSelectorBuilder = new Docket(DocumentationType.SWAGGER_2)
                 .groupName(groupName)
                 .apiInfo(apiInfo)
@@ -77,9 +86,11 @@ public class Swagger2AutoConfiguration implements BeanFactoryPostProcessor, Envi
     
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        Map<String, DocketConfig> group = getProperties().getGroup();
+        Swagger2Properties properties = getProperties();
+        Map<String, DocketConfig> group = properties.getGroup();
         if (group.isEmpty()) {
-            beanFactory.registerSingleton(formatterBeanName(DEFAULT_DOCKET_GROUP_NAME), defaultDocket());
+            Docket defaultDocket = defaultDocket(properties);
+            beanFactory.registerSingleton(formatterBeanName(DEFAULT_DOCKET_GROUP_NAME), defaultDocket);
             return;
         }
         for (String groupName : group.keySet()) {
