@@ -1,4 +1,4 @@
-package in.hocg.swagger2.spring.boot.samples.ro;
+package in.hocg.swagger2.spring.boot.samples.simple.ro;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

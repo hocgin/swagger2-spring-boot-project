@@ -1,10 +1,10 @@
-package in.hocg.swagger2.spring.boot.samples;
+package in.hocg.swagger2.spring.boot.samples.nocode;
 
 import com.google.common.collect.Lists;
-import in.hocg.swagger2.spring.boot.samples.ro.AddArticle;
-import in.hocg.swagger2.spring.boot.samples.ro.UpdateArticle;
-import in.hocg.swagger2.spring.boot.samples.vo.Article;
-import in.hocg.swagger2.spring.boot.samples.vo.Result;
+import in.hocg.swagger2.spring.boot.samples.nocode.ro.AddArticle;
+import in.hocg.swagger2.spring.boot.samples.nocode.ro.UpdateArticle;
+import in.hocg.swagger2.spring.boot.samples.nocode.vo.Article;
+import in.hocg.swagger2.spring.boot.samples.nocode.vo.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;

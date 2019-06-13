@@ -1,7 +1,5 @@
-package in.hocg.swagger2.spring.boot.samples.vo;
+package in.hocg.swagger2.spring.boot.samples.simple.vo;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

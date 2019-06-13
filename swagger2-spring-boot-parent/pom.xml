@@ -66,18 +66,6 @@
     </pluginRepositories>
 
     <build>
-        <!-- Used for packaging NOTICE & LICENSE to each sub-module jar-->
-        <resources>
-            <resource>
-                <directory>src/main/resources/</directory>
-                <filtering>false</filtering>
-            </resource>
-            <resource>
-                <directory>../</directory>
-                <targetPath>META-INF/</targetPath>
-                <filtering>false</filtering>
-            </resource>
-        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

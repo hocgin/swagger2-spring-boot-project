@@ -3,31 +3,21 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>swagger2-spring-boot-parent</artifactId>
         <groupId>in.hocg.swagger2</groupId>
+        <artifactId>swagger2-spring-boot-parent</artifactId>
         <version>${revision}</version>
         <relativePath>../swagger2-spring-boot-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
 
     <name>Swagger2 Spring Boot :: Samples</name>
+    <groupId>in.hocg.swagger2.samples</groupId>
     <artifactId>swagger2-spring-boot-samples</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>in.hocg.swagger2</groupId>
-            <artifactId>swagger2-spring-boot-starter</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
+    <modules>
+        <module>swagger2-nocode-samples</module>
+        <module>swagger2-simple-samples</module>
+    </modules>
 
 </project>

@@ -1,4 +1,4 @@
-package in.hocg.swagger2.spring.boot.samples.ro;
+package in.hocg.swagger2.spring.boot.samples.simple.vo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -11,8 +11,8 @@ import lombok.experimental.Accessors;
  */
 @Data
 @Accessors(chain = true)
-@ApiModel("发布文章")
-public class AddArticle {
+@ApiModel("文章详情")
+public class Article {
     
     @ApiModelProperty("文章标题")
     private String title;
