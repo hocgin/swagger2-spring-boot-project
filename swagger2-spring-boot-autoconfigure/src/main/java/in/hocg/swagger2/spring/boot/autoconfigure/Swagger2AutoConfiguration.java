@@ -32,11 +32,13 @@ import java.util.Map;
 public class Swagger2AutoConfiguration {
     private final Swagger2Properties properties;
     private final Map<String, Docket> DOCKETS = Maps.newHashMap();
+    private final static String DEFAULT_DOCKET_GROUP_NAME = "__DEFAULT__";
     
     @PostConstruct
     public void postProcessBeforeInitialization() {
         Map<String, DocketConfig> group = properties.getGroup();
         if (group.isEmpty()) {
+            DOCKETS.put(DEFAULT_DOCKET_GROUP_NAME, defaultDocket());
             return;
         }
         for (String groupName : group.keySet()) {
@@ -44,10 +46,17 @@ public class Swagger2AutoConfiguration {
                 break;
             }
             DocketConfig docketConfig = group.get(groupName);
-            log.info(String.format("%s %s", groupName, docketConfig));
             Docket docket = buildDocket(groupName, docketConfig);
             DOCKETS.put(groupName, docket);
         }
+    }
+    
+    private Docket defaultDocket() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()
+                .apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.any())
+                .build();
     }
     
     

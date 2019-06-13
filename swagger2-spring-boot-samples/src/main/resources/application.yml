@@ -1,0 +1,20 @@
+debug: true
+#spring:
+#  swagger2:
+#    group:
+#      xxx:
+#        base-package: in.hocg
+#        path-mapping: /sd
+#        title: Project API Title
+#        description: Project API Description
+#        version: 1.0.1
+#        terms-of-service-url: https://hocg.in
+#        extensions:
+#          k: v
+#          k2: v2
+#        license: MIT
+#        license-url: https://hocg.in/MIT
+#        contact:
+#          name: hocgin
+#          url: https://hocg.in
+#          email: hocgin@gmail.com

@@ -50,6 +50,21 @@
         </dependencies>
     </dependencyManagement>
 
+    <repositories>
+        <repository>
+            <id>alibaba-maven</id>
+            <name>alibaba</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>alibaba-maven</id>
+            <name>alibaba</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+        </pluginRepository>
+    </pluginRepositories>
+
     <build>
         <!-- Used for packaging NOTICE & LICENSE to each sub-module jar-->
         <resources>
