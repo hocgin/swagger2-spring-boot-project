@@ -15,6 +15,10 @@
     <groupId>in.hocg.swagger2.samples</groupId>
     <artifactId>swagger2-spring-boot-samples</artifactId>
 
+    <properties>
+        <maven.deploy.skip>true</maven.deploy.skip>
+    </properties>
+
     <modules>
         <module>swagger2-nocode-samples</module>
         <module>swagger2-simple-samples</module>

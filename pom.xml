@@ -19,7 +19,7 @@
     <properties>
         <maven_javadoc_version>3.0.1</maven_javadoc_version>
         <maven_surefire_version>2.19.1</maven_surefire_version>
-        <revision>2.7.1</revision>
+        <revision>0.1.0-SNAPSHOT</revision>
     </properties>
 
     <modules>
@@ -58,4 +58,16 @@
             </plugin>
         </plugins>
     </build>
+
+    <!--推送地址-->
+    <distributionManagement>
+        <repository>
+            <id>snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
