@@ -108,7 +108,7 @@ public class Swagger2AutoConfiguration implements BeanFactoryPostProcessor, Envi
     }
     
     private Swagger2Properties getProperties() {
-        return Binder.get(environment).bind(Swagger2Properties.PREFIX, Swagger2Properties.class).get();
+        return Binder.get(environment).bind(Swagger2Properties.PREFIX, Swagger2Properties.class).orElse(new Swagger2Properties());
     }
     
 }
